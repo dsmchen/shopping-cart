@@ -1,21 +1,22 @@
+import { Link } from 'react-router-dom';
 import classes from './header.module.css';
 
 export default function Header() {
   return (
     <header className={classes.header}>
-      <a href="#">
+      <Link href="#">
         <h1>Amaze</h1>
-      </a>
+      </Link>
       <nav>
         <ul>
           <li>
-            <a href="/">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a href="shop">Shop</a>
+            <Link to="shop">Shop</Link>
           </li>
           <li>
-            <a href="cart">Cart</a>
+            <Link to="cart">Cart</Link>
           </li>
         </ul>
       </nav>
