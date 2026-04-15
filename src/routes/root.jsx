@@ -1,10 +1,5 @@
-import Header from '../components/header/header';
+import RootLayout from '../layouts/root-layout';
 
 export default function Root() {
-  return (
-    <>
-      <Header />
-      <main></main>
-    </>
-  );
+  return <RootLayout />;
 }
