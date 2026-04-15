@@ -66,3 +66,42 @@ h6 {
 #__next {
   isolation: isolate;
 }
+
+/*
+  Font face
+*/
+
+@font-face {
+  font-family: 'Inclusive Sans';
+  src:
+    url('./assets/fonts/InclusiveSans-Regular.woff2') format('woff2'),
+    url('./assets/fonts/InclusiveSans-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inclusive Sans';
+  src:
+    url('./assets/fonts/InclusiveSans-Bold.woff2') format('woff2'),
+    url('./assets/fonts/InclusiveSans-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*
+  Variables
+*/
+
+:root {
+  --text: #6b6375;
+  --bg: #fff;
+
+  --sans: 'Inclusive Sans', system-ui, 'Segoe UI', Roboto, sans-serif;
+
+  font-family: var(--sans);
+  color: var(--text);
+  background: var(--bg);
+}
