@@ -5,6 +5,16 @@
   padding: 20px;
 }
 
+.header a {
+  border: 1px solid var(--bg);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.header a:hover {
+  border-color: var(--text-h);
+}
+
 .header h1 {
   line-height: 1;
 }
