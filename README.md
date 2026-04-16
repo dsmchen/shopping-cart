@@ -10,5 +10,6 @@ A mock shopping cart using React. For more information, please go to [The Odin P
 ## Resources
 
 - [Josh W. Comeau - A Modern CSS Reset](https://www.joshwcomeau.com/css/custom-css-reset/)
+- [React Router - Tutorial](https://reactrouter.com/6.28.0/start/tutorial)
 - [Stack Overflow - How can I reuse my layout for the errorElement in the root route?](https://stackoverflow.com/a/76385223)
 
