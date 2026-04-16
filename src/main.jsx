@@ -5,7 +5,7 @@ import './index.css';
 import Root from './routes/root';
 import RootLayout from './layouts/root-layout';
 import ErrorPage from './pages/error-page/error-page';
-import Home from './routes/home';
+import Home from './routes/home/home';
 import Shop from './routes/shop';
 import Cart from './routes/cart';
 

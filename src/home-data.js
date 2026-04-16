@@ -18,7 +18,7 @@ const homeData = [
     linkText: 'Dolor sit amet',
   },
   {
-    title: 'Ed do eiusmod tempor incididunt',
+    title: 'Ed do eiusmod tempor',
     imageUrl: 'src/assets/images/sayan-majhi-rZDBOGPHU7w-unsplash.jpg',
     linkUrl: '',
     linkText: 'Ut labore et',
