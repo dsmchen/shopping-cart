@@ -5,10 +5,12 @@ A mock shopping cart using React. For more information, please go to [The Odin P
 ## Inspiration
 
 - [Amazon](https://www.amazon.com/)
+- [Etsy](https://www.etsy.com/)
 - [Vite](https://vite.dev/)
 
 ## Resources
 
+- [DigitalOcean - How To Scale and Crop Images with CSS object-fit](https://www.digitalocean.com/community/tutorials/css-cropping-images-object-fit)
 - [Josh W. Comeau - A Modern CSS Reset](https://www.joshwcomeau.com/css/custom-css-reset/)
 - [React Router - Tutorial](https://reactrouter.com/6.28.0/start/tutorial)
 - [Stack Overflow - How can I reuse my layout for the errorElement in the root route?](https://stackoverflow.com/a/76385223)
