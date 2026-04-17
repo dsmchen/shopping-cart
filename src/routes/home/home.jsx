@@ -1,4 +1,4 @@
-import homeData from '../../home-data';
+import homeData from '../../db/home-data';
 import HomeCard from '../../components/home-card/home-card';
 import classes from './home.module.css';
 
