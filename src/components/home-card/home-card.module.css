@@ -24,3 +24,13 @@
   height: 300px;
   object-fit: cover;
 }
+
+/*
+  Tablet
+*/
+
+@media screen and (width >= 40em) {
+  .homeCard img {
+    width: 400px;
+  }
+}

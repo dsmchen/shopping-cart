@@ -3,3 +3,23 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
+
+/*
+  Tablet
+*/
+
+@media screen and (width >= 40em) {
+  .home {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/*
+  Desktop
+*/
+
+@media screen and (width >= 70em) {
+  .home {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
