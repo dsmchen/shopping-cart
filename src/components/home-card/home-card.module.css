@@ -1,7 +1,11 @@
 .homeCard {
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid var(--text);
+  transition: box-shadow 0.3s;
+}
+
+.homeCard:hover {
+  box-shadow: var(--shadow);
 }
 
 .homeCard div {
