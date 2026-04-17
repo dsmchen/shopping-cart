@@ -128,3 +128,14 @@ a {
 main {
   padding: 20px;
 }
+
+/*
+  Desktop
+*/
+
+@media screen and (width >= 70em) {
+  #root {
+    max-width: 1126px;
+    margin: 0 auto;
+  }
+}
