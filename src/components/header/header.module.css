@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
 }
 
 .header a {
@@ -15,14 +15,24 @@
   border-color: var(--text-h);
 }
 
-.header h1 {
-  line-height: 1;
-}
-
 .header ul {
   padding-left: 0;
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 5px;
   font-weight: bold;
+}
+
+/*
+  Tablet
+*/
+
+@media screen and (width >= 40em) {
+  .header {
+    padding: 20px;
+  }
+
+  .header ul {
+    gap: 20px;
+  }
 }

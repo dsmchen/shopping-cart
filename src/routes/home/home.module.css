@@ -1,7 +1,7 @@
 .home {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: 10px;
 }
 
 /*
@@ -11,6 +11,7 @@
 @media screen and (width >= 40em) {
   .home {
     grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
 }
 
