@@ -7,9 +7,9 @@ export default function Home() {
 
   return (
     <div className={classes.home}>
-      {data.map((d) => (
+      {data.map((d, i) => (
         <HomeCard
-          key={d.title}
+          key={i}
           title={d.title}
           imageUrl={d.imageUrl}
           linkUrl={d.linkUrl}
