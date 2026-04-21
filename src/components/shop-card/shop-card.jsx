@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function ShopCard({ title }) {
+export default function ShopCard({ productId, productTitle }) {
   const [count, setCount] = useState(0);
   const [error, setError] = useState(null);
 
@@ -50,8 +50,10 @@ export default function ShopCard({ title }) {
 
   return (
     <div className="shopCard">
-      <h2>{title}</h2>
+      <h2>{productTitle}</h2>
       <form onSubmit={handleSubmit} noValidate>
+        <label>
+          <span>Quantity</span>
         <input
           name="count"
           type="text"
@@ -59,14 +61,20 @@ export default function ShopCard({ title }) {
           pattern="[0-9]*"
           value={count}
           onChange={handleChange}
+            aria-describedby={`error-${productId}`}
         />
-        {error && <p>{error}</p>}
+          {error && (
+            <span id={`error-${productId}`} role="alert">
+              {error}
+            </span>
+          )}
         <button type="button" onClick={increment} disabled={count >= 30}>
           Increment
         </button>
         <button type="button" onClick={decrement} disabled={count <= 0}>
           Decrement
         </button>
+        </label>
         <button type="submit">Add to cart</button>
       </form>
     </div>
