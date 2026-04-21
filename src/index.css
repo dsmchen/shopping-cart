@@ -96,9 +96,12 @@ h6 {
 */
 
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
+  --color-neutral-050: #fefefb;
+  --color-brand-dark: #213130;
+
+  --text: var(--color-brand-dark);
+  --text-h: var(--color-brand-dark);
+  --bg: var(--color-neutral-050);
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
