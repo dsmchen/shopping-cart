@@ -25,6 +25,10 @@
   object-fit: cover;
 }
 
+.homeCard p {
+  text-decoration: underline;
+}
+
 /*
   Tablet
 */
