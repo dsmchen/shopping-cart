@@ -1,7 +1,13 @@
 import { Link } from 'react-router-dom';
 import classes from './header.module.css';
 
-export default function Header() {
+export default function Header({ cart }) {
+  const initialValue = 0;
+  const sumWithInitial = cart.reduce(
+    (accumulator, currentValue) => accumulator + Number(currentValue.count),
+    initialValue,
+  );
+
   return (
     <header className={classes.header}>
       <Link href="#">
@@ -16,7 +22,7 @@ export default function Header() {
             <Link to="shop">Shop</Link>
           </li>
           <li>
-            <Link to="cart">Cart</Link>
+            <Link to="cart">Cart ({sumWithInitial ?? initialValue})</Link>
           </li>
         </ul>
       </nav>
