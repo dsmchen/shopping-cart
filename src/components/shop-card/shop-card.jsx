@@ -6,6 +6,10 @@ export default function ShopCard({ productId, productTitle }) {
   const [error, setError] = useState(null);
   const [cart, setCart] = useOutletContext();
 
+  function checkProductId(arr, val) {
+    return arr.some((arrVal) => arrVal.productId === val);
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
 
@@ -18,13 +22,7 @@ export default function ShopCard({ productId, productTitle }) {
       if (formJson.count > 30) {
         setError('Please enter a number from 0 to 30.');
       } else {
-        const index = cart.findIndex(
-          (item) => item.productId === formJson.productId,
-        );
-
-        if (index === -1) {
-          setCart(cart.concat(formJson));
-        } else {
+        if (checkProductId(cart, formJson.productId)) {
           setCart(
             cart.map((item) => {
               if (item.productId === formJson.productId) {
@@ -34,6 +32,8 @@ export default function ShopCard({ productId, productTitle }) {
               }
             }),
           );
+        } else {
+          setCart(cart.concat(formJson));
         }
 
         setError(null);
