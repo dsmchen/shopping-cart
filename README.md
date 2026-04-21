@@ -5,14 +5,15 @@ A mock shopping cart using React. For more information, please go to [The Odin P
 ## Inspiration
 
 - [Amazon](https://www.amazon.com/)
+- [Buffer](https://buffer.com/)
 - [Etsy](https://www.etsy.com/)
 - [Vite](https://vite.dev/)
 
 ## Resources
 
 - [DigitalOcean - How To Scale and Crop Images with CSS object-fit](https://www.digitalocean.com/community/tutorials/css-cropping-images-object-fit)
+- [GOV.UK - Why the GOV.UK Design System team changed the input type for numbers](https://technology.blog.gov.uk/2020/02/24/why-the-gov-uk-design-system-team-changed-the-input-type-for-numbers/)
 - [Josh W. Comeau - A Modern CSS Reset](https://www.joshwcomeau.com/css/custom-css-reset/)
-- [React Router - Tutorial](https://reactrouter.com/6.28.0/start/tutorial)
 - [Stack Overflow - How can I reuse my layout for the errorElement in the root route?](https://stackoverflow.com/a/76385223)
 
 ### Assets
