@@ -7,7 +7,7 @@ import RootLayout from './layouts/root-layout';
 import ErrorPage from './pages/error-page/error-page';
 import Home from './routes/home/home';
 import Shop from './routes/shop';
-import Cart from './routes/cart';
+import Cart from './routes/cart/cart';
 
 const router = createBrowserRouter([
   {

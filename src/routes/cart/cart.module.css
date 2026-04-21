@@ -1,0 +1,7 @@
+.cart.empty {
+  text-align: center;
+}
+
+.cart.empty a {
+  text-decoration: underline;
+}
