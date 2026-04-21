@@ -14,30 +14,24 @@ export default function ShopCard({ productId, productTitle }) {
     e.preventDefault();
 
     const form = e.target;
+    const formData = new FormData(form);
+    const formJson = Object.fromEntries(formData.entries());
 
-    if (form.checkValidity()) {
-      const formData = new FormData(form);
-      const formJson = Object.fromEntries(formData.entries());
-
-      if (formJson.count > 30) {
-        setError('Please enter a number from 0 to 30.');
+    if (form.checkValidity() && formJson.count <= 30) {
+      if (checkProductId(cart, formJson.productId)) {
+        setCart(
+          cart.map((item) => {
+            if (item.productId === formJson.productId) {
+              return { ...item, count: formJson.count };
+            } else {
+              return item;
+            }
+          }),
+        );
       } else {
-        if (checkProductId(cart, formJson.productId)) {
-          setCart(
-            cart.map((item) => {
-              if (item.productId === formJson.productId) {
-                return { ...item, count: formJson.count };
-              } else {
-                return item;
-              }
-            }),
-          );
-        } else {
-          setCart(cart.concat(formJson));
-        }
-
-        setError(null);
+        setCart(cart.concat(formJson));
       }
+      setError(null);
     } else {
       setError('Please enter a number from 0 to 30.');
     }
@@ -48,22 +42,22 @@ export default function ShopCard({ productId, productTitle }) {
   }
 
   function increment() {
-    if (count < 0) {
-      setCount(0);
-      setError('Minimum quantity is 0.');
-    } else {
+    if (count >= 0) {
       setCount((c) => Number(c) + 1);
       setError(null);
+    } else {
+      setCount(0);
+      setError('Minimum quantity is 0.');
     }
   }
 
   function decrement() {
-    if (count > 30) {
-      setCount(30);
-      setError('Maximum quantity is 30.');
-    } else {
+    if (count <= 30) {
       setCount((c) => Number(c) - 1);
       setError(null);
+    } else {
+      setCount(30);
+      setError('Maximum quantity is 30.');
     }
   }
 
@@ -81,6 +75,7 @@ export default function ShopCard({ productId, productTitle }) {
             value={count}
             onChange={handleChange}
             aria-describedby={`error-${productId}`}
+            autoComplete="off"
           />
           {error && (
             <span id={`error-${productId}`} role="alert">
