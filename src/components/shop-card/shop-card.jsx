@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
 
 export default function ShopCard({ productId, productTitle }) {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
   const [error, setError] = useState(null);
   const [cart, setCart] = useOutletContext();
 
@@ -17,7 +17,7 @@ export default function ShopCard({ productId, productTitle }) {
     const formData = new FormData(form);
     const formJson = Object.fromEntries(formData.entries());
 
-    if (form.checkValidity() && formJson.count <= 30) {
+    if (form.checkValidity() && formJson.count >= 1 && formJson.count <= 30) {
       if (checkProductId(cart, formJson.productId)) {
         setCart(
           cart.map((item) => {
@@ -33,7 +33,7 @@ export default function ShopCard({ productId, productTitle }) {
       }
       setError(null);
     } else {
-      setError('Please enter a number from 0 to 30.');
+      setError('Please enter a number from 1 to 30.');
     }
   }
 
@@ -42,12 +42,12 @@ export default function ShopCard({ productId, productTitle }) {
   }
 
   function increment() {
-    if (count >= 0) {
+    if (count >= 1) {
       setCount((c) => Number(c) + 1);
       setError(null);
     } else {
-      setCount(0);
-      setError('Minimum quantity is 0.');
+      setCount(1);
+      setError('Minimum quantity is 1.');
     }
   }
 
@@ -85,7 +85,7 @@ export default function ShopCard({ productId, productTitle }) {
           <button type="button" onClick={increment} disabled={count >= 30}>
             Increment
           </button>
-          <button type="button" onClick={decrement} disabled={count <= 0}>
+          <button type="button" onClick={decrement} disabled={count <= 1}>
             Decrement
           </button>
         </label>
