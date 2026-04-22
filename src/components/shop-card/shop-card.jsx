@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import classes from './shop-card.module.css';
 
-export default function ShopCard({ productId, productTitle }) {
+export default function ShopCard({ productId, productTitle, productImage }) {
   const [count, setCount] = useState(1);
   const [error, setError] = useState(null);
   const [cart, setCart] = useOutletContext();
@@ -65,7 +66,10 @@ export default function ShopCard({ productId, productTitle }) {
   }
 
   return (
-    <div className="shopCard">
+    <div className={classes.shopCard}>
+      <div className={classes.imageWrapper}>
+        <img src={productImage} alt="" />
+      </div>
       <h2>{productTitle}</h2>
       <form onSubmit={handleSubmit} noValidate>
         <label>

@@ -1,0 +1,10 @@
+.shopCard .imageWrapper {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.shopCard h2 {
+  font-size: 1rem;
+}

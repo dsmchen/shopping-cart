@@ -1,5 +1,6 @@
 import ShopCard from '../components/shop-card/shop-card';
 import useData from '../hooks/useData';
+import classes from './home/home.module.css';
 
 export default function Shop() {
   const url = 'https://fakestoreapi.com/products';
@@ -8,7 +9,12 @@ export default function Shop() {
 
   if (data) {
     cards = data.map((d) => (
-      <ShopCard key={d.id} productId={d.id} productTitle={d.title} />
+      <ShopCard
+        key={d.id}
+        productId={d.id}
+        productTitle={d.title}
+        productImage={d.image}
+      />
     ));
   }
 
@@ -32,5 +38,5 @@ export default function Shop() {
     );
   }
 
-  return <div className="shop">{cards}</div>;
+  return <div className={classes.home}>{cards}</div>;
 }
