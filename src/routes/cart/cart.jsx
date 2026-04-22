@@ -22,8 +22,3 @@ export default function Cart() {
     </div>
   );
 }
-// On the cart page, you should display the items and their quantities,
-// and allow users to increase/decrease the quantity of items in their cart
-// (including removal if appropriate).
-
-// There’s no need to implement any checkout/payment system.
