@@ -27,16 +27,27 @@ export default function CartCard({ productId, count }) {
     );
   }
 
+  function handleSubmit() {
+    setCart(
+      cart.filter((item) => {
+        if (item.productId !== productId) {
+          return item;
+        }
+      }),
+    );
+  }
+
   return (
     <div className="cartCard">
       <p>Product ID: {productId}</p>
-      <form noValidate>
+      <form onSubmit={handleSubmit} noValidate>
         <label>
           <span>Quantity</span>
           <select defaultValue={count} onChange={handleChange}>
             {options}
           </select>
         </label>
+        <button type="submit">Delete</button>
       </form>
     </div>
   );
