@@ -12,6 +12,8 @@ A mock shopping cart using React. For more information, please go to [The Odin P
 ## Resources
 
 - [DigitalOcean - How To Scale and Crop Images with CSS object-fit](https://www.digitalocean.com/community/tutorials/css-cropping-images-object-fit)
+- [Fake Store API](https://fakestoreapi.com/)
+- [Favicon.io](https://favicon.io/)
 - [GOV.UK - Why the GOV.UK Design System team changed the input type for numbers](https://technology.blog.gov.uk/2020/02/24/why-the-gov-uk-design-system-team-changed-the-input-type-for-numbers/)
 - [Josh W. Comeau - A Modern CSS Reset](https://www.joshwcomeau.com/css/custom-css-reset/)
 - [Stack Overflow - How can I reuse my layout for the errorElement in the root route?](https://stackoverflow.com/a/76385223)
