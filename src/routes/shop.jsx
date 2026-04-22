@@ -12,5 +12,25 @@ export default function Shop() {
     ));
   }
 
+  if (loading) {
+    return (
+      <div className="loading">
+        <h2>Loading...</h2>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="error">
+        <h2>Oops!</h2>
+        <p>Sorry, an unexpected error has occurred.</p>
+        <p>
+          <i>{error.statusText || error.message}</i>
+        </p>
+      </div>
+    );
+  }
+
   return <div className="shop">{cards}</div>;
 }
