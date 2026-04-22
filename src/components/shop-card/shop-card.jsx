@@ -22,7 +22,10 @@ export default function ShopCard({ productId, productTitle }) {
         setCart(
           cart.map((item) => {
             if (item.productId === formJson.productId) {
-              return { ...item, count: formJson.count };
+              return {
+                ...item,
+                count: Number(item.count) + Number(formJson.count),
+              };
             } else {
               return item;
             }
