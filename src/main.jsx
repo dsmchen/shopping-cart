@@ -6,7 +6,7 @@ import Root from './routes/root';
 import RootLayout from './layouts/root-layout';
 import ErrorPage from './pages/error-page/error-page';
 import Home from './routes/home/home';
-import Shop from './routes/shop';
+import Shop from './routes/shop/shop';
 import Cart from './routes/cart/cart';
 
 const router = createBrowserRouter([

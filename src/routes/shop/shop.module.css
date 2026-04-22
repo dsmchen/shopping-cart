@@ -1,0 +1,15 @@
+.shop {
+  composes: home from '../home/home.module.css';
+}
+
+.shop .loading,
+.shop .error {
+  grid-column: 1/-1;
+  text-align: center;
+}
+
+.shop .error {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
