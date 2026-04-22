@@ -97,11 +97,15 @@ h6 {
 
 :root {
   --color-neutral-050: #fefefb;
-  --color-brand-dark: #213130;
+  --color-neutral-400: #dbdbd1;
+  --color-dark: #213130;
+  --color-green-300: #b0ec9c;
+  --color-green-400: #9be784;
 
-  --text: var(--color-brand-dark);
-  --text-h: var(--color-brand-dark);
+  --text: var(--color-dark);
   --bg: var(--color-neutral-050);
+  --bg-cta: var(--color-green-300);
+  --bg-cta-hover: var(--color-green-400);
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
@@ -120,7 +124,6 @@ h6 {
 h1,
 h2 {
   font-family: var(--heading);
-  color: var(--text-h);
 }
 
 h1 {
@@ -130,6 +133,10 @@ h1 {
 a {
   color: var(--text);
   text-decoration: none;
+}
+
+button {
+  cursor: pointer;
 }
 
 main {

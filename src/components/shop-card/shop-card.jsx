@@ -67,34 +67,50 @@ export default function ShopCard({ productId, productTitle, productImage }) {
 
   return (
     <div className={classes.shopCard}>
-      <div className={classes.imageWrapper}>
-        <img src={productImage} alt="" />
+      <div className="imageTitleContainer">
+        <div className={classes.imageWrapper}>
+          <img src={productImage} alt="" />
+        </div>
+        <h2>{productTitle}</h2>
       </div>
-      <h2>{productTitle}</h2>
       <form onSubmit={handleSubmit} noValidate>
         <label>
-          <span>Quantity</span>
-          <input
-            name="count"
-            type="text"
-            inputMode="numeric"
-            pattern="[0-9]*"
-            value={count}
-            onChange={handleChange}
-            aria-describedby={`error-${productId}`}
-            autoComplete="off"
-          />
+          <div className={classes.row}>
+            <span className={classes.labelText}>Quantity</span>
+            <input
+              name="count"
+              type="text"
+              inputMode="numeric"
+              pattern="[0-9]*"
+              value={count}
+              onChange={handleChange}
+              aria-describedby={`error-${productId}`}
+              autoComplete="off"
+            />
+            <div className={classes.column}>
+              <button
+                type="button"
+                onClick={increment}
+                disabled={count >= 30}
+                aria-label="Increment"
+              >
+                +
+              </button>
+              <button
+                type="button"
+                onClick={decrement}
+                disabled={count <= 1}
+                aria-label="Decrement"
+              >
+                -
+              </button>
+            </div>
+          </div>
           {error && (
             <span id={`error-${productId}`} role="alert">
               {error}
             </span>
           )}
-          <button type="button" onClick={increment} disabled={count >= 30}>
-            Increment
-          </button>
-          <button type="button" onClick={decrement} disabled={count <= 1}>
-            Decrement
-          </button>
         </label>
         <button type="submit">Add to cart</button>
         <input type="hidden" name="productId" value={productId} />
