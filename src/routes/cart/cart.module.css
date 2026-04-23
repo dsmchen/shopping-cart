@@ -1,7 +1,12 @@
-.cart.empty {
+.cart {
+  composes: home from '../home/home.module.css';
+}
+
+.cart .empty {
+  grid-column: 1/-1;
   text-align: center;
 }
 
-.cart.empty a {
+.cart .empty a {
   text-decoration: underline;
 }

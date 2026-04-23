@@ -112,7 +112,9 @@ export default function ShopCard({ productId, productTitle, productImage }) {
             </span>
           )}
         </label>
-        <button type="submit">Add to cart</button>
+        <button type="submit" className={classes.addToCartBtn}>
+          Add to cart
+        </button>
         <input type="hidden" name="productId" value={productId} />
       </form>
     </div>

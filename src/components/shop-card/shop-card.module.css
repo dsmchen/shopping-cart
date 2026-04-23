@@ -45,7 +45,7 @@
   height: 1rem;
 }
 
-.shopCard button[type='submit'] {
+.shopCard .addToCartBtn {
   display: block;
   width: 100%;
   margin-top: 10px;
@@ -57,6 +57,6 @@
   transition: 500ms;
 }
 
-.shopCard button[type='submit']:hover {
+.shopCard .addToCartBtn:hover {
   background: var(--bg-cta-hover);
 }

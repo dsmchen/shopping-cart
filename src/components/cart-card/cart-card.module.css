@@ -1,0 +1,31 @@
+.cartCard {
+  composes: shopCard from '../shop-card/shop-card.module.css';
+}
+
+.cartCard .imageWrapper {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.cartCard form {
+  display: flex;
+  flex-direction: column;
+}
+
+.cartCard label {
+  display: flex;
+  align-items: center;
+}
+
+.cartCard .labelText {
+  margin-right: 5px;
+}
+
+.cartCard .deleteBtn {
+  border: none;
+  background: none;
+  padding: 0;
+  text-decoration: underline;
+}
