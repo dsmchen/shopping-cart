@@ -1,6 +1,7 @@
 import { useOutletContext } from 'react-router-dom';
 import useData from '../../hooks/useData';
 import classes from './cart-card.module.css';
+import Loading from '../loading/loading';
 
 export default function CartCard({ productId, count }) {
   const [cart, setCart] = useOutletContext();
@@ -43,9 +44,7 @@ export default function CartCard({ productId, count }) {
 
   if (loading) {
     return (
-      <div className={classes.cartCard}>
-        <h2 className={classes.loading}>Loading...</h2>
-      </div>
+      <Loading wrapperClass={classes.cartCard} loadingClass={classes.loading} />
     );
   }
 

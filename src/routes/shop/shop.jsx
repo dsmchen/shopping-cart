@@ -1,3 +1,4 @@
+import Loading from '../../components/loading/loading';
 import ShopCard from '../../components/shop-card/shop-card';
 import useData from '../../hooks/useData';
 import classes from './shop.module.css';
@@ -21,9 +22,7 @@ export default function Shop() {
 
   if (loading) {
     return (
-      <div className={classes.shop}>
-        <h2 className={classes.loading}>Loading...</h2>
-      </div>
+      <Loading wrapperClass={classes.shop} loadingClass={classes.loading} />
     );
   }
 
