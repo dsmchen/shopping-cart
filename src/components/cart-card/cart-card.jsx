@@ -1,7 +1,8 @@
 import { useOutletContext } from 'react-router-dom';
 import useData from '../../hooks/useData';
-import classes from './cart-card.module.css';
 import Loading from '../loading/loading';
+import Error from '../error/error';
+import classes from './cart-card.module.css';
 
 export default function CartCard({ productId, count }) {
   const [cart, setCart] = useOutletContext();
@@ -50,15 +51,11 @@ export default function CartCard({ productId, count }) {
 
   if (error) {
     return (
-      <div className={classes.cartCard}>
-        <div className={classes.error}>
-          <h2>Oops!</h2>
-          <p>Sorry, an unexpected error has occurred.</p>
-          <p>
-            <i>{error.statusText || error.message}</i>
-          </p>
-        </div>
-      </div>
+      <Error
+        wrapperClass={classes.cartCard}
+        errorClass={classes.error}
+        error={error}
+      />
     );
   }
 

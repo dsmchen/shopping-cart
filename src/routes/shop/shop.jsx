@@ -1,4 +1,5 @@
 import Loading from '../../components/loading/loading';
+import Error from '../../components/error/error';
 import ShopCard from '../../components/shop-card/shop-card';
 import useData from '../../hooks/useData';
 import classes from './shop.module.css';
@@ -28,15 +29,11 @@ export default function Shop() {
 
   if (error) {
     return (
-      <div className={classes.shop}>
-        <div className={classes.error}>
-          <h2>Oops!</h2>
-          <p>Sorry, an unexpected error has occurred.</p>
-          <p>
-            <i>{error.statusText || error.message}</i>
-          </p>
-        </div>
-      </div>
+      <Error
+        wrapperClass={classes.shop}
+        errorClass={classes.error}
+        error={error}
+      />
     );
   }
 

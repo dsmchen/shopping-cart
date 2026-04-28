@@ -1,4 +1,4 @@
-.errorPage {
+.errorPage .error {
   display: flex;
   flex-direction: column;
   align-items: center;
