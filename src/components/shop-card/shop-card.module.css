@@ -12,11 +12,17 @@
   height: 150px;
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-bottom: 10px;
+}
+
+.shopCard img {
+  max-height: 100%;
 }
 
 .shopCard h2 {
   font-size: 1rem;
+  word-break: break-word;
 }
 
 .shopCard .labelText {
@@ -24,7 +30,7 @@
 }
 
 .shopCard input {
-  width: 4rem;
+  width: 2rem;
 }
 
 .shopCard .row {

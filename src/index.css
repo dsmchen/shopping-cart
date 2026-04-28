@@ -140,7 +140,17 @@ button {
 }
 
 main {
-  padding: 20px;
+  padding: 10px;
+}
+
+/*
+  Tablet
+*/
+
+@media screen and (width >= 40em) {
+  main {
+    padding: 20px;
+  }
 }
 
 /*
