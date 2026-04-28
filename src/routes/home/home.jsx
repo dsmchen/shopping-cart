@@ -5,17 +5,19 @@ import classes from './home.module.css';
 export default function Home() {
   const data = homeData;
 
-  return (
-    <div className={classes.home}>
-      {data.map((d, i) => (
-        <HomeCard
-          key={i}
-          title={d.title}
-          imageUrl={d.imageUrl}
-          linkUrl={d.linkUrl}
-          linkText={d.linkText}
-        />
-      ))}
-    </div>
-  );
+  let cards = [];
+
+  if (data) {
+    cards = data.map((d, i) => (
+      <HomeCard
+        key={i}
+        title={d.title}
+        imageUrl={d.imageUrl}
+        linkUrl={d.linkUrl}
+        linkText={d.linkText}
+      />
+    ));
+  }
+
+  return <div className={classes.home}>{cards}</div>;
 }
