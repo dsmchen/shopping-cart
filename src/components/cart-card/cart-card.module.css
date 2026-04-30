@@ -2,16 +2,8 @@
   composes: shopCard from '../shop-card/shop-card.module.css';
 }
 
-.cartCard .imageWrapper {
-  height: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.cartCard img {
-  max-height: 100%;
+.imageWrapper {
+  composes: imageWrapper from '../shop-card/shop-card.module.css';
 }
 
 .cartCard form {
@@ -24,15 +16,15 @@
   align-items: center;
 }
 
-.cartCard .labelText {
-  margin-right: 5px;
+.labelText {
+  composes: labelText from '../shop-card/shop-card.module.css';
 }
 
 .cartCard select {
   width: 5rem;
 }
 
-.cartCard .deleteBtn {
+.deleteBtn {
   border: none;
   background: none;
   padding: 0;
