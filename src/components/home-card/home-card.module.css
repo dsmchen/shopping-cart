@@ -8,7 +8,7 @@
   box-shadow: var(--shadow);
 }
 
-.homeCard .titleImageContainer {
+.titleImageContainer {
   max-height: 300px;
   overflow: hidden;
   margin-bottom: 10px;

@@ -2,14 +2,12 @@
   composes: home from '../home/home.module.css';
 }
 
-.shop .loading,
-.shop .error {
+.loading,
+.error {
   grid-column: 1/-1;
   text-align: center;
 }
 
-.shop .error {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.error {
+  composes: error from '../../pages/error-page/error-page.module.css';
 }

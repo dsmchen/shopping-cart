@@ -2,11 +2,11 @@
   composes: home from '../home/home.module.css';
 }
 
-.cart .empty {
+.empty {
   grid-column: 1/-1;
   text-align: center;
 }
 
-.cart .empty a {
+.empty a {
   text-decoration: underline;
 }
