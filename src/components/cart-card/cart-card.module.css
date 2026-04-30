@@ -28,6 +28,10 @@
   margin-right: 5px;
 }
 
+.cartCard select {
+  width: 5rem;
+}
+
 .cartCard .deleteBtn {
   border: none;
   background: none;
