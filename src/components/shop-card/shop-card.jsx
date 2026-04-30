@@ -22,20 +22,30 @@ export default function ShopCard({ productId, productTitle, productImage }) {
       if (checkProductId(cart, formJson.productId)) {
         setCart(
           cart.map((item) => {
-            if (item.productId === formJson.productId) {
+            const newCount = Number(item.count) + Number(formJson.count);
+
+            if (item.productId === formJson.productId && newCount <= 30) {
+              setError(null);
+
               return {
                 ...item,
-                count: Number(item.count) + Number(formJson.count),
+                count: newCount,
               };
             } else {
+              setError(
+                newCount > 30
+                  ? "We're sorry. You've requested more of this product than the 30 available."
+                  : null,
+              );
+
               return item;
             }
           }),
         );
       } else {
         setCart(cart.concat(formJson));
+        setError(null);
       }
-      setError(null);
     } else {
       setError('Please enter a number from 1 to 30.');
     }
