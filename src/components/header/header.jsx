@@ -7,6 +7,7 @@ export default function Header({ cart }) {
     (accumulator, currentValue) => accumulator + Number(currentValue.count),
     initialValue,
   );
+  const displayValue = sumWithInitial > 99 ? '99+' : sumWithInitial;
 
   return (
     <header className={classes.header}>
@@ -22,7 +23,7 @@ export default function Header({ cart }) {
             <Link to="shop">Shop</Link>
           </li>
           <li>
-            <Link to="cart">Cart ({sumWithInitial ?? initialValue})</Link>
+            <Link to="cart">Cart ({displayValue ?? initialValue})</Link>
           </li>
         </ul>
       </nav>
