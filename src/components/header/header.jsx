@@ -11,7 +11,7 @@ export default function Header({ cart }) {
 
   return (
     <header className={classes.header}>
-      <Link href="#">
+      <Link to="/">
         <h1>Amaze</h1>
       </Link>
       <nav>
