@@ -86,4 +86,90 @@ describe('Shop Card component', () => {
 
     expect(textbox).toHaveValue('10');
   });
+
+  it('handles add to cart when quantity greater than 30', async () => {
+    const user = userEvent.setup();
+    const textbox = screen.getAllByRole('textbox', {
+      name: 'Quantity + -',
+    })[0];
+    const addToCartBtn = screen.getAllByRole('button', {
+      name: 'Add to cart',
+    })[0];
+
+    await user.click(textbox);
+    await user.keyboard('00');
+    await user.click(addToCartBtn);
+
+    expect(textbox).toHaveValue('30');
+    expect(screen.getByRole('alert').textContent).toMatch(
+      /please enter a number from 1 to 30/i,
+    );
+    expect(
+      screen.getByRole('link', {
+        name: 'Cart (0)',
+      }),
+    ).toBeInTheDocument();
+  });
+
+  it('handles add to cart when quantity less than 0', async () => {
+    const user = userEvent.setup();
+    const textbox = screen.getAllByRole('textbox', {
+      name: 'Quantity + -',
+    })[0];
+    const addToCartBtn = screen.getAllByRole('button', {
+      name: 'Add to cart',
+    })[0];
+
+    await user.click(textbox);
+    await user.keyboard('{Backspace}{-}{1}{0}{0}');
+    await user.click(addToCartBtn);
+
+    expect(textbox).toHaveValue('1');
+    expect(screen.getByRole('alert').textContent).toMatch(
+      /please enter a number from 1 to 30/i,
+    );
+    expect(
+      screen.getByRole('link', {
+        name: 'Cart (0)',
+      }),
+    ).toBeInTheDocument();
+  });
+
+  it('handles decrement when quantity greater than 30', async () => {
+    const user = userEvent.setup();
+    const textbox = screen.getAllByRole('textbox', {
+      name: 'Quantity + -',
+    })[0];
+    const decrementBtn = screen.getAllByRole('button', {
+      name: 'Decrement',
+    })[0];
+
+    await user.click(textbox);
+    await user.keyboard('00');
+    await user.click(decrementBtn);
+
+    expect(textbox).toHaveValue('30');
+    expect(screen.getByRole('alert').textContent).toMatch(
+      /maximum quantity is 30/i,
+    );
+  });
+
+  it('handles increment when quantity less than 0', async () => {
+    const user = userEvent.setup();
+    const textbox = screen.getAllByRole('textbox', {
+      name: 'Quantity + -',
+    })[0];
+    const incrementBtn = screen.getAllByRole('button', {
+      name: 'Increment',
+    })[0];
+
+    await user.click(textbox);
+    await user.keyboard('{Backspace}{-}{1}{0}{0}');
+    await user.click(incrementBtn);
+
+    expect(textbox).toHaveValue('1');
+    expect(screen.getByRole('alert').textContent).toMatch(
+      /minimum quantity is 1/i,
+    );
+  });
 });

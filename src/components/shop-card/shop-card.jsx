@@ -48,6 +48,11 @@ export default function ShopCard({ productId, productTitle, productImage }) {
       }
     } else {
       setError('Please enter a number from 1 to 30.');
+      if (count > 30) {
+        setCount(30);
+      } else {
+        setCount(1);
+      }
     }
   }
 
