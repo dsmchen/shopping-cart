@@ -44,21 +44,22 @@ describe('Root component', () => {
       name: 'Up to 95% off on your first 3 orders',
       level: 2,
     });
+    const user = userEvent.setup();
 
     expect(homeHeadings).toHaveLength(3);
 
-    userEvent.click(screen.getByText('Shop'));
+    user.click(screen.getByText('Shop'));
     await waitFor(() => screen.findByText('Loading...'));
 
-    userEvent.click(screen.getByText('Amaze'));
+    user.click(screen.getByText('Amaze'));
     expect(homeHeadings).toHaveLength(3);
 
-    userEvent.click(screen.getByText('Cart (0)'));
+    user.click(screen.getByText('Cart (0)'));
     await waitFor(() =>
       screen.getByRole('heading', { name: 'Your cart is empty', level: 2 }),
     );
 
-    userEvent.click(screen.getByText('Home'));
+    user.click(screen.getByText('Home'));
     expect(homeHeadings).toHaveLength(3);
   });
 });
