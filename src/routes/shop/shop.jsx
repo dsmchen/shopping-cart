@@ -4,8 +4,8 @@ import ShopCard from '../../components/shop-card/shop-card';
 import useData from '../../hooks/useData';
 import classes from './shop.module.css';
 
-export default function Shop() {
-  const url = 'https://fakestoreapi.com/products';
+export default function Shop({ propUrl }) {
+  const url = propUrl ?? 'https://fakestoreapi.com/products';
   const { data, error, loading } = useData(url);
 
   let cards = [];
