@@ -12,7 +12,7 @@
 }
 
 .header a:hover {
-  border-color: var(--text-h);
+  border-color: var(--text);
 }
 
 .header ul {
