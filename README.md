@@ -1,6 +1,6 @@
 # Shopping Cart
 
-A mock shopping cart using React. For more information, please go to [The Odin Project: Shopping Cart](https://www.theodinproject.com/lessons/node-path-react-new-shopping-cart).
+A mock shopping cart using React and CSS Modules. For more information, please go to [The Odin Project: Shopping Cart](https://www.theodinproject.com/lessons/node-path-react-new-shopping-cart).
 
 ## Inspiration
 
@@ -25,3 +25,9 @@ A mock shopping cart using React. For more information, please go to [The Odin P
 - <a href="https://unsplash.com/@marissacristina?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Marissa Grootes</a> - <a href="https://unsplash.com/photos/womens-sunglasses-and-black-bag-with-watch-and-iphone-6-D4jRahaUaIc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 - <a href="https://unsplash.com/@riyanong?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Riyan Ong</a> - <a href="https://unsplash.com/photos/white-and-black-adidas-sneakers-j1PxAa2U-T4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 - <a href="https://unsplash.com/@minimalsayan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sayan Majhi</a> - <a href="https://unsplash.com/photos/a-close-up-of-a-video-game-controller-rZDBOGPHU7w?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+## Areas for improvement
+
+- Improve keyboard accessibility e.g. add skip to main content, add keyboard shortcuts
+- Improve shop card form validation e.g. restrict input on key down
+- Refactor JavaScript with TypeScript
