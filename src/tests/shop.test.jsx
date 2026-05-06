@@ -12,7 +12,7 @@ describe('Shop component', () => {
   });
 
   it('renders error state', async () => {
-    render(<Shop propUrl="https://example.com/" />);
+    render(<Shop testUrl="https://example.com/" />);
 
     await screen.findByRole('heading', { name: 'Oops!' });
 
