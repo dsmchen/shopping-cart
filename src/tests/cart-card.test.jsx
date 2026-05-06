@@ -99,4 +99,48 @@ describe('Cart Card component', () => {
       /oops/i,
     );
   });
+
+  it('renders data state', async () => {
+    const user = userEvent.setup();
+    const Stub = createRoutesStub([
+      {
+        path: '/',
+        Component: Root,
+        children: [
+          {
+            path: '/shop',
+            Component: Shop,
+          },
+          {
+            path: '/cart',
+            Component: Cart,
+          },
+        ],
+      },
+    ]);
+
+    render(<Stub initialEntries={['/shop']} />);
+
+    await screen.findByRole(
+      'heading',
+      {
+        name: 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops',
+      },
+      { timeout: 5000 },
+    );
+
+    const addToCartBtn = screen.getAllByRole('button', {
+      name: 'Add to cart',
+    })[0];
+
+    await user.click(addToCartBtn);
+    await user.click(screen.getByRole('link', { name: 'Cart (1)' }));
+    await screen.findByRole('heading', {
+      name: 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops',
+    });
+
+    expect(screen.getByRole('heading', { level: 2 }).textContent).toMatch(
+      /fjallraven/i,
+    );
+  });
 });
