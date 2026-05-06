@@ -4,10 +4,10 @@ import Loading from '../loading/loading';
 import Error from '../error/error';
 import classes from './cart-card.module.css';
 
-export default function CartCard({ productId, count }) {
+export default function CartCard({ productId, count, testProductId }) {
   const [cart, setCart] = useOutletContext();
   const options = [];
-  const url = `https://fakestoreapi.com/products/${productId}`;
+  const url = `https://fakestoreapi.com/products/${testProductId ?? productId}`;
   const { data, error, loading } = useData(url);
 
   for (let index = 1; index < 31; index++) {

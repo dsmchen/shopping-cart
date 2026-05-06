@@ -2,7 +2,7 @@ import { Link, useOutletContext } from 'react-router-dom';
 import CartCard from '../../components/cart-card/cart-card';
 import classes from './cart.module.css';
 
-export default function Cart() {
+export default function Cart({ testProductId }) {
   const [cart] = useOutletContext();
 
   if (!cart.length) {
@@ -19,7 +19,12 @@ export default function Cart() {
   return (
     <div className={classes.cart}>
       {cart.map((c) => (
-        <CartCard key={c.productId} productId={c.productId} count={c.count} />
+        <CartCard
+          key={c.productId}
+          productId={c.productId}
+          count={c.count}
+          testProductId={testProductId}
+        />
       ))}
     </div>
   );
