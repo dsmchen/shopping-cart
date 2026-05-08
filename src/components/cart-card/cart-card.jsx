@@ -2,6 +2,7 @@ import { useOutletContext } from 'react-router-dom';
 import useData from '../../hooks/useData';
 import Loading from '../loading/loading';
 import Error from '../error/error';
+import ProductCard from '../product-card/product-card';
 import classes from './cart-card.module.css';
 
 export default function CartCard({ productId, count, testProductId }) {
@@ -61,13 +62,11 @@ export default function CartCard({ productId, count, testProductId }) {
 
   if (data) {
     return (
-      <div className={classes.cartCard}>
-        <div className="imageTitleContainer">
-          <div className={classes.imageWrapper}>
-            <img src={data.image} alt="" />
-          </div>
-          <h2>{data.title}</h2>
-        </div>
+      <ProductCard
+        cardClass="cartCard"
+        imageSrc={data.image}
+        heading={data.title}
+      >
         <form onSubmit={handleSubmit} noValidate>
           <label>
             <span className={classes.labelText}>Quantity</span>
@@ -81,7 +80,7 @@ export default function CartCard({ productId, count, testProductId }) {
             </button>
           </div>
         </form>
-      </div>
+      </ProductCard>
     );
   }
 }

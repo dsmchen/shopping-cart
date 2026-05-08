@@ -1,11 +1,3 @@
-.cartCard {
-  composes: shopCard from '../shop-card/shop-card.module.css';
-}
-
-.imageWrapper {
-  composes: imageWrapper from '../shop-card/shop-card.module.css';
-}
-
 .cartCard form {
   display: flex;
   flex-direction: column;

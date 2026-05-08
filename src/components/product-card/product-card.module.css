@@ -1,0 +1,26 @@
+.productCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid var(--color-neutral-400);
+  border-radius: 10px;
+}
+
+.imageWrapper {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.productCard img {
+  max-height: 100%;
+}
+
+.productCard h2 {
+  font-size: 1rem;
+  word-break: break-word;
+}

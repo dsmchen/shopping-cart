@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
+import ProductCard from '../product-card/product-card';
 import classes from './shop-card.module.css';
 
 export default function ShopCard({ productId, productTitle, productImage }) {
@@ -81,13 +82,11 @@ export default function ShopCard({ productId, productTitle, productImage }) {
   }
 
   return (
-    <div className={classes.shopCard}>
-      <div className="imageTitleContainer">
-        <div className={classes.imageWrapper}>
-          <img src={productImage} alt="" />
-        </div>
-        <h2>{productTitle}</h2>
-      </div>
+    <ProductCard
+      cardClass="shopCard"
+      imageSrc={productImage}
+      heading={productTitle}
+    >
       <form onSubmit={handleSubmit} noValidate>
         <label>
           <div className={classes.row}>
@@ -132,6 +131,6 @@ export default function ShopCard({ productId, productTitle, productImage }) {
         </button>
         <input type="hidden" name="productId" value={productId} />
       </form>
-    </div>
+    </ProductCard>
   );
 }
