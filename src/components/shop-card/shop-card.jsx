@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import ProductCard from '../product-card/product-card';
+import Form from '../form/form';
 import classes from './shop-card.module.css';
 
 export default function ShopCard({ productId, productTitle, productImage }) {
@@ -87,7 +88,7 @@ export default function ShopCard({ productId, productTitle, productImage }) {
       imageSrc={productImage}
       heading={productTitle}
     >
-      <form onSubmit={handleSubmit} noValidate>
+      <Form handleSubmit={handleSubmit}>
         <label>
           <div className={classes.row}>
             <span className={classes.labelText}>Quantity</span>
@@ -130,7 +131,7 @@ export default function ShopCard({ productId, productTitle, productImage }) {
           Add to cart
         </button>
         <input type="hidden" name="productId" value={productId} />
-      </form>
+      </Form>
     </ProductCard>
   );
 }

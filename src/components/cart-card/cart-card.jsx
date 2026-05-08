@@ -3,6 +3,7 @@ import useData from '../../hooks/useData';
 import Loading from '../loading/loading';
 import Error from '../error/error';
 import ProductCard from '../product-card/product-card';
+import Form from '../form/form';
 import classes from './cart-card.module.css';
 
 export default function CartCard({ productId, count, testProductId }) {
@@ -67,7 +68,7 @@ export default function CartCard({ productId, count, testProductId }) {
         imageSrc={data.image}
         heading={data.title}
       >
-        <form onSubmit={handleSubmit} noValidate>
+        <Form handleSubmit={handleSubmit}>
           <label>
             <span className={classes.labelText}>Quantity</span>
             <select defaultValue={count} onChange={handleChange}>
@@ -79,7 +80,7 @@ export default function CartCard({ productId, count, testProductId }) {
               Delete
             </button>
           </div>
-        </form>
+        </Form>
       </ProductCard>
     );
   }
