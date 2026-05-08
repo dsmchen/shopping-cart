@@ -63,7 +63,7 @@ export default function CartCard({ productId, count, testProductId }) {
   if (data) {
     return (
       <ProductCard
-        cardClass="cartCard"
+        cardClass={classes.cartCard}
         imageSrc={data.image}
         heading={data.title}
       >
