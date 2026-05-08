@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import ProductCard from '../product-card/product-card';
 import Form from '../form/form';
+import Button from '../button/button';
 import classes from './shop-card.module.css';
 
 export default function ShopCard({ productId, productTitle, productImage }) {
@@ -103,22 +104,20 @@ export default function ShopCard({ productId, productTitle, productImage }) {
               autoComplete="off"
             />
             <div className={classes.column}>
-              <button
-                type="button"
-                onClick={increment}
+              <Button
+                handleClick={increment}
                 disabled={count >= 30}
-                aria-label="Increment"
+                ariaLabel="Increment"
               >
                 +
-              </button>
-              <button
-                type="button"
-                onClick={decrement}
+              </Button>
+              <Button
+                handleClick={decrement}
                 disabled={count <= 1}
-                aria-label="Decrement"
+                ariaLabel="Decrement"
               >
                 -
-              </button>
+              </Button>
             </div>
           </div>
           {error && (
@@ -127,9 +126,9 @@ export default function ShopCard({ productId, productTitle, productImage }) {
             </span>
           )}
         </label>
-        <button type="submit" className={classes.addToCartBtn}>
+        <Button type="submit" buttonClass={classes.addToCartBtn}>
           Add to cart
-        </button>
+        </Button>
         <input type="hidden" name="productId" value={productId} />
       </Form>
     </ProductCard>

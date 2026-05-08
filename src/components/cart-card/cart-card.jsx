@@ -4,6 +4,7 @@ import Loading from '../loading/loading';
 import Error from '../error/error';
 import ProductCard from '../product-card/product-card';
 import Form from '../form/form';
+import Button from '../button/button';
 import classes from './cart-card.module.css';
 
 export default function CartCard({ productId, count, testProductId }) {
@@ -75,11 +76,9 @@ export default function CartCard({ productId, count, testProductId }) {
               {options}
             </select>
           </label>
-          <div className="buttonWrapper">
-            <button type="submit" className={classes.deleteBtn}>
-              Delete
-            </button>
-          </div>
+          <Button type="submit" buttonClass={classes.deleteBtn}>
+            Delete
+          </Button>
         </Form>
       </ProductCard>
     );

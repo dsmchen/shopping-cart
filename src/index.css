@@ -135,14 +135,6 @@ a {
   text-decoration: none;
 }
 
-button {
-  cursor: pointer;
-}
-
-button[type='submit'] {
-  color: var(--text);
-}
-
 main {
   padding: 10px;
 }
